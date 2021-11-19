@@ -1,0 +1,60 @@
+body {
+  background: linear-gradient(to top, #09203f 0%, #537895 100%);
+}
+input {
+  width: 300px;
+  height: 45px;
+}
+ul {
+  display: inline;
+}
+.search-bar {
+  padding: 0px;
+}
+.motherboard-main {
+  box-sizing: none;
+  width: 700px;
+  padding: 90px;
+  border-radius: 2%;
+  margin: 100px auto;
+  background: whitesmoke;
+}
+.credits {
+  font-size: 11px;
+  color: palevioletred;
+  text-align: right;
+  top: -85px;
+  right: 35px;
+  position: relative;
+}
+.placement {
+  display: inline;
+  text-align: left;
+  font-size: 60px;
+  list-style: none;
+  text-decoration: none;
+}
+
+.row-align {
+  display: inline;
+}
+.future-weather {
+  text-align: right;
+  padding: 30px 0px 0px 0px;
+}
+.vl {
+  border-left: 2px solid black;
+  height: 400px;
+  position: relative;
+  left: 35%;
+  top: 20px;
+}
+.city-name {
+  font-size: 35px;
+  padding: 5px 0px;
+  font-weight: bold;
+}
+.current-location-button {
+  display: inline;
+  margin: 7px 0px 0px 0px;
+}
