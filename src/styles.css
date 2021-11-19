@@ -58,3 +58,6 @@ ul {
   display: inline;
   margin: 7px 0px 0px 0px;
 }
+.link-style {
+  text-decoration: none;
+}
