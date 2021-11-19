@@ -59,6 +59,6 @@ ul {
   margin: 7px 0px 0px 0px;
 }
 .link-style {
-  text-decoration: none;
+  text-decoration: underline;
   color: palevioletred;
 }
