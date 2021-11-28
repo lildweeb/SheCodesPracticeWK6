@@ -86,3 +86,12 @@ function showFTemp(event) {
 }
 let fLink = document.querySelector("#f-link");
 fLink.addEventListener("click", showFTemp);
+
+function showCTemp (event){
+  event.preventDefault();
+  let displayTemperature = document.querySelector("#current-city-temp");
+  displayTemperature.innerHTML=Math.round(celsiusTemperature);
+}
+
+let cLink = document.querySelector("#c-link");
+fLink.addEventListener("click", showCTemp);
