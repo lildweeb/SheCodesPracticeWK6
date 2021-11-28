@@ -69,3 +69,9 @@ ul {
   top: -100px;
   left: 55%;
 }
+.hang-right {
+  display: inline;
+  position: relative;
+  top: -50px;
+  left: 180%;
+}

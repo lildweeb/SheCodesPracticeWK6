@@ -35,7 +35,7 @@ function displayTemperature(response) {
   //);
   document.querySelector("#current-city-temp").innerHTML = `${Math.round(
     response.data.main.temp
-  )} °F`;
+  )} `;
   document.querySelector("#current-city-name").innerHTML = response.data.name;
 }
 
@@ -76,22 +76,3 @@ let searchInput = document.querySelector("#city-form");
 searchInput.addEventListener("submit", searchCity);
 //°F
 //wk7
-let celsiusTemperature = null;
-
-function showFTemp(event) {
-  event.preventDefault();
-  let fahrenheiTemperature = (${celsiusTemperature} * 9) / 5 + 32;
-  let displayTemperature = document.querySelector("#current-city-temp");
-  displayTemperature = Math.round(fahrenheiTemperature.innerHTML);
-}
-let fLink = document.querySelector("#f-link");
-fLink.addEventListener("click", showFTemp);
-
-function showCTemp (event){
-  event.preventDefault();
-  let displayTemperature = document.querySelector("#current-city-temp");
-  displayTemperature.innerHTML=Math.round(celsiusTemperature);
-}
-
-let cLink = document.querySelector("#c-link");
-fLink.addEventListener("click", showCTemp);
