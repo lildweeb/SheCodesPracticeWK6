@@ -14,7 +14,7 @@ ul {
 .motherboard-main {
   box-sizing: none;
   width: 700px;
-  padding: 90px;
+  padding: 65px;
   border-radius: 2%;
   margin: 100px auto;
   background: whitesmoke;
@@ -30,7 +30,7 @@ ul {
 .placement {
   display: inline;
   text-align: left;
-  font-size: 60px;
+  font-size: 85px;
   list-style: none;
   text-decoration: none;
 }
@@ -61,4 +61,11 @@ ul {
 .link-style {
   text-decoration: underline;
   color: palevioletred;
+}
+.float-left {
+  font-size: 25px;
+  text-decoration: none;
+  position: relative;
+  top: -100px;
+  left: 55%;
 }
