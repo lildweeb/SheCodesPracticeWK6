@@ -75,3 +75,13 @@ ul {
   top: -50px;
   left: 180%;
 }
+.moon-placement {
+  position: relative;
+  left: 180%;
+  top: -164px;
+  height: 150px;
+  width: 150px;
+}
+.inner-space {
+  height: 400px;
+}

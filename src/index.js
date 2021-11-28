@@ -30,9 +30,6 @@ currentDay.innerHTML = `${day} ${month}/${date}`;
 currentTime.innerHTML = `${hours}:${minutes} ${ampm}`;
 //3.........................................................
 function displayTemperature(response) {
-  //document.querySelector("#current-city-temp").innerHTML = Math.round(
-  //response.data.main.temp
-  //);
   document.querySelector("#current-city-temp").innerHTML = `${Math.round(
     response.data.main.temp
   )} `;
