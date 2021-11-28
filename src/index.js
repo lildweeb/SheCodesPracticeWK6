@@ -75,3 +75,14 @@ function searchCity(event) {
 let searchInput = document.querySelector("#city-form");
 searchInput.addEventListener("submit", searchCity);
 //°F
+//wk7
+let celsiusTemperature = null;
+
+function showFTemp(event) {
+  event.preventDefault();
+  let fahrenheiTemperature = (${celsiusTemperature} * 9) / 5 + 32;
+  let displayTemperature = document.querySelector("#current-city-temp");
+  displayTemperature = Math.round(fahrenheiTemperature.innerHTML);
+}
+let fLink = document.querySelector("#f-link");
+fLink.addEventListener("click", showFTemp);
