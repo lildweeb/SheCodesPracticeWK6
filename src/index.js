@@ -81,6 +81,12 @@ function searchCity(event) {
   search(cityEntered.value);
 }
 //wk 7
+function showCTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-city-temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
 let celsiusTemperature = null;
 
 function showFTemp(event) {
@@ -92,6 +98,9 @@ function showFTemp(event) {
 }
 let fLink = document.querySelector("#f-link");
 fLink.addEventListener("click", showFTemp);
+
+let cLink = document.querySelector("#c-link");
+cLink.addEventListener("click", showCTemp);
 
 //wk5
 let searchInput = document.querySelector("#city-form");
