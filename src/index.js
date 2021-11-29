@@ -37,6 +37,9 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+
+  celsiusTemperature = response.data.main.temp;
+
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -46,7 +49,7 @@ function displayTemperature(response) {
 }
 
 function search(city) {
-  let units = "imperial";
+  let units = "metric";
   let apiKey = "c6ce8d51b8f185a66119a5dd74f32320";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(displayTemperature);
@@ -77,8 +80,21 @@ function searchCity(event) {
   cityInput.innerHTML = `${cityEntered.value}`;
   search(cityEntered.value);
 }
+//wk 7
+let celsiusTemperature = null;
 
+function showFTemp(event) {
+  event.preventDefault();
+
+  let temperatureElement = document.querySelector("#current-city-temp");
+  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+}
+let fLink = document.querySelector("#f-link");
+fLink.addEventListener("click", showFTemp);
+
+//wk5
 let searchInput = document.querySelector("#city-form");
 searchInput.addEventListener("submit", searchCity);
 //°F
-//wk7
+search("Los Angeles");
