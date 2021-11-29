@@ -21,10 +21,10 @@ ul {
 }
 .credits {
   font-size: 11px;
-  color: palevioletred;
+  color: #527794;
   text-align: right;
   top: -85px;
-  right: 35px;
+  right: 335px;
   position: relative;
 }
 .placement {
@@ -60,7 +60,7 @@ ul {
 }
 .link-style {
   text-decoration: underline;
-  color: palevioletred;
+  color: #527794;
 }
 .float-left {
   font-size: 25px;
@@ -84,4 +84,7 @@ ul {
 }
 .inner-space {
   height: 400px;
+}
+.units a {
+  text-decoration: none;
 }
