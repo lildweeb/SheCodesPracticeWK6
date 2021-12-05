@@ -30,24 +30,25 @@ currentDay.innerHTML = `${day} ${month}/${date}`;
 currentTime.innerHTML = `${hours}:${minutes} ${ampm}`;
 //8
 function displayForecast(response) {
-  console.log(response.data);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Thursday", "Friday", "Saturday", "Sunday"];
-  days.forEach(function (day) {
+
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
             <div class="col-2 weather-forecast-detail">
-              <div class="weather-forecast-date">${day}</div>
+              <div class="weather-forecast-date">${forecastDay.dt}</div>
               <img
-                src="http://openweathermap.org/img/wn/04d@2x.png"
+                src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
                 width="65px"
               />
               <div class="weather-forecast-temperature">
-                <span class="weather-forecast-temperature-maximum">18°</span>
-                <span class="weather-forecast-temperature-minimum">12°</span>
+                <span class="weather-forecast-temperature-maximum">${forecastDay.temp.max}°</span>
+                <span class="weather-forecast-temperature-minimum">${forecastDay.temp.min}°</span>
               </div>
             </div>
           </div>`;
