@@ -17,7 +17,7 @@ ul {
   padding: 65px;
   border-radius: 2%;
   margin: 100px auto;
-  background: whitesmoke;
+  background: rgb(152, 184, 211);
 }
 .credits {
   font-size: 11px;
@@ -87,4 +87,14 @@ ul {
 }
 .units a {
   text-decoration: none;
+}
+.weather-forecast-detail {
+  text-align: center;
+  height: 110px;
+}
+.weather-forecast-date {
+  font-size: 18px;
+}
+.weather-forecast-temperature-minimum {
+  opacity: 0.6;
 }

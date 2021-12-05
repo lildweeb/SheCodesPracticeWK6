@@ -28,6 +28,42 @@ let ampm = hours >= 12 ? "PM" : "AM";
 
 currentDay.innerHTML = `${day} ${month}/${date}`;
 currentTime.innerHTML = `${hours}:${minutes} ${ampm}`;
+//8
+function displayForecast(response) {
+  console.log(response.data);
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thursday", "Friday", "Saturday", "Sunday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-2 weather-forecast-detail">
+              <div class="weather-forecast-date">${day}</div>
+              <img
+                src="http://openweathermap.org/img/wn/04d@2x.png"
+                width="65px"
+              />
+              <div class="weather-forecast-temperature">
+                <span class="weather-forecast-temperature-maximum">18°</span>
+                <span class="weather-forecast-temperature-minimum">12°</span>
+              </div>
+            </div>
+          </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "c6ce8d51b8f185a66119a5dd74f32320";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=&{apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 //3.........................................................
 function displayTemperature(response) {
   document.querySelector("#current-city-temp").innerHTML = `${Math.round(
@@ -38,6 +74,8 @@ function displayTemperature(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
 
+  //(displayForecast);
+
   celsiusTemperature = response.data.main.temp;
 
   iconElement.setAttribute(
@@ -46,6 +84,8 @@ function displayTemperature(response) {
   );
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
