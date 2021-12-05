@@ -1,4 +1,4 @@
-//last updated on 11.15
+//last updated on 12.05
 let now = new Date();
 
 let currentDay = document.querySelector("#week-day");
