@@ -90,8 +90,7 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-
-  //(displayForecast);
+  let dateElement = document.querySelector("#date");
 
   celsiusTemperature = response.data.main.temp;
 
@@ -101,6 +100,7 @@ function displayTemperature(response) {
   );
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 
   getForecast(response.data.coord);
 }
