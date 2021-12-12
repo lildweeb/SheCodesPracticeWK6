@@ -67,7 +67,6 @@ function displayForecast(response) {
                   forecastDay.temp.min
                 )}°</span>
               </div>
-            </div>
           </div>`;
     }
   });
@@ -76,10 +75,8 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "c6ce8d51b8f185a66119a5dd74f32320";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=&{apiKey}&units=metric`;
-  console.log(apiUrl);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -92,8 +89,7 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-
-  //(displayForecast);
+  let dateElement = document.querySelector("#date");
 
   celsiusTemperature = response.data.main.temp;
 
@@ -103,12 +99,12 @@ function displayTemperature(response) {
   );
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   getForecast(response.data.coord);
 }
 
 function search(city) {
-  let units = "metric";
+  let units = "imperial";
   let apiKey = "c6ce8d51b8f185a66119a5dd74f32320";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(displayTemperature);
@@ -139,27 +135,6 @@ function searchCity(event) {
   cityInput.innerHTML = `${cityEntered.value}`;
   search(cityEntered.value);
 }
-//wk 7
-function showCTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-city-temp");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
-
-function showFTemp(event) {
-  event.preventDefault();
-
-  let temperatureElement = document.querySelector("#current-city-temp");
-  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
-}
-let fLink = document.querySelector("#f-link");
-fLink.addEventListener("click", showFTemp);
-
-let cLink = document.querySelector("#c-link");
-cLink.addEventListener("click", showCTemp);
 
 //wk5
 let searchInput = document.querySelector("#city-form");

@@ -1,6 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather HW</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/fbeec671b7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="motherboard-main">
+        <div class="row inner-space">
+          <div class="col-4 current-weather">
+            <div class="row">
+              <form class="search-bar" id="city-form">
+                <input
+                  type="text"
+                  placeholder="Please enter city"
+                  id="city-search-bar"
+                  autofocus
+                />
+              </form>
+              <button
+                type="button"
+                class="btn current-location-button btn-secondary"
+                id="current-location-button"
+              >
+                Current Location
+              </button>
+            </div>
+
+            <div class="row city-name" id="current-city-name">Los Angeles</div>
+            <div class="row current-date" id="week-day">Saturday 10/23</div>
+            <div class="row current-time" id="time">8:47PM</div>
+            <div class="hang-right">
+              <span
+                >Wind: <span class="current-wind" id="wind">5 </span> Km/H</span
+              >
+              <div>
+                <span
+                  >Humidity:
+                  <span class="current-humidity" id="humidity">20 </span>
+                  %</span
+                >
+              </div>
+            </div>
+            <div class="row current-temp-number">
+              <ul class="current-temp-number placement">
+                <div class="placement" id="current-city-temp">61</div>
                 <div class="float-left units">
-                  <a href="#" id="c-link" class="units">°C</a> |
-                  <a href="#" id="f-link">°F</a>
+                  <a>°F</a>
                 </div>
                 <div>
                   <img
